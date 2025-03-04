@@ -67,7 +67,7 @@
   const imageType = ref("");
   const isLoading = ref(false);
   
-  //--- Trigger file input when user clicks the upload area
+  
   const triggerFileInput = () => {
     fileInput.value.click();
   };
@@ -85,7 +85,7 @@
     processFile(file);
   };
   
-  //--- Process file (Shared by both input and drag/drop)
+  //--- Process file
   const processFile = (file) => {
     if (file) {
       isLoading.value = true;
@@ -98,7 +98,7 @@
     }
   };
   
-  //--- Save image to Vuex & localStorage
+  //--- Save image to 'Vuex' & 'localStorage'
   const saveImage = () => {
     if (!imageName.value || !imageType.value) {
       console.log("We should have your data :)");
@@ -115,7 +115,7 @@
         src: reader.result,
       });
   
-      // Reset for next upload
+      // Reset Datas for next upload
       imageFile.value = null;
       imagePreview.value = null;
       imageName.value = "";
